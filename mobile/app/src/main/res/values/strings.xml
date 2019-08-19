@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">IrRemote Mobile</string>
+    <string name="id">irremote</string>
+    <string name="empty">Empty List click button to add IR signal</string>
+</resources>

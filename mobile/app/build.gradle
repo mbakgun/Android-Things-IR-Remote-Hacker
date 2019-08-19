@@ -1,0 +1,42 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.mbakgun.mobile"
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    //android
+    implementation Libs.appcompat
+    implementation Libs.constraintlayout
+    api Libs.play_services_nearby
+    implementation Libs.lifecycle_extensions
+    implementation Libs.material
+    implementation Libs.kotlin_stdlib_jdk7
+
+    //dagger
+    kapt Libs.dagger_compiler
+    kapt Libs.dagger_android_processor
+    implementation Libs.dagger_android_support
+
+    //Gson
+    implementation Libs.gson
+}

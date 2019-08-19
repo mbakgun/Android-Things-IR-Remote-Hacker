@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+>
+
+    <data>
+
+        <variable
+                name="item"
+                type="com.mbakgun.mobile.data.IrData"/>
+
+    </data>
+
+
+    <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                       android:id="@+id/card_view"
+                                       android:layout_width="match_parent"
+                                       android:layout_height="wrap_content"
+                                       android:clickable="true"
+                                       android:focusable="true"
+                                       android:foreground="?android:attr/selectableItemBackground"
+                                       card_view:cardCornerRadius="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            <TextView android:layout_width="wrap_content"
+                      tools:text="Television"
+                      android:layout_height="wrap_content"
+                      android:textSize="16sp"
+                      android:textColor="#E2000000"
+                      android:textStyle="bold"
+                      android:text="@{item.name}"
+                      card_view:layout_constraintTop_toTopOf="parent"
+                      card_view:layout_constraintBottom_toBottomOf="parent"
+                      card_view:layout_constraintStart_toStartOf="parent"
+                      android:layout_margin="24dp"
+                      android:id="@+id/textView"/>
+
+
+            <ImageView android:layout_width="wrap_content"
+                       android:src="@drawable/ic_edit"
+                       android:id="@+id/imageViewEdit"
+                       android:layout_height="wrap_content"
+                       android:padding="8dp"
+                       card_view:layout_constraintBottom_toBottomOf="parent"
+                       card_view:layout_constraintTop_toTopOf="parent"
+                       android:layout_marginEnd="16dp"
+                       android:layout_marginRight="16dp"
+                       card_view:layout_constraintEnd_toStartOf="@+id/imageViewDelete"/>
+
+            <ImageView android:layout_width="wrap_content"
+                       android:src="@drawable/ic_delete"
+                       android:id="@+id/imageViewDelete"
+                       android:layout_height="wrap_content"
+                       android:padding="8dp"
+                       card_view:layout_constraintEnd_toEndOf="parent"
+                       card_view:layout_constraintBottom_toBottomOf="parent"
+                       card_view:layout_constraintTop_toTopOf="parent"
+                       android:layout_marginEnd="16dp"
+                       android:layout_marginRight="16dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
